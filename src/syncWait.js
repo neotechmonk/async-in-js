@@ -1,0 +1,42 @@
+const newPost = {
+  title: "post three ",
+  body: "this is post three"
+};
+
+const posts = [
+  {
+    title: "post one ",
+    body: "this is post one"
+  },
+  {
+    title: "post two",
+    body: "this is post two  "
+  }
+];
+
+// Get posts
+function getPosts() {
+  console.log("in getPosts of  : promise.js");
+  setTimeout(() => {
+    let output = "<div> in  promise.js </div>";
+    posts.forEach(post => {
+      output += `<li> ${post.title} : ${post.body}  </li>`;
+    });
+    //  document.body.innerHTML = output;
+  }, 1000);
+}
+
+async function createPost(post) {
+  console.log("in createPost of promise.js ");
+ 
+  console.log("before await");
+ await setTimeout(() => {
+  posts.push(post);
+  console.log("after  await + before getPosts");
+ }, 5000);
+  
+  await getPosts();
+  console.log("after getPosts");
+}
+
+createPost(newPost);
