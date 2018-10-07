@@ -46,4 +46,4 @@ function createPost(post) {
 createPost(newPost).then(getPosts).catch(function (e) {
   return console.log(e);
 });
-//# sourceMappingURL=promise.js.map
+//# sourceMappingURL=asyncWait.js.map

@@ -35,7 +35,7 @@ function createPost(post) {
 
       const error = false;
 
-      if (error) {
+      if (!error) {
         resolve();
       } else {
         reject("Error : something went wrong   ");
